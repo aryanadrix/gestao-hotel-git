@@ -1,3 +1,7 @@
+#Colaboração: Lucas Almeida
+
+
+
 quartos = [
     {"numero": 101, "tipo": "Solteiro", "disponivel": True},
     {"numero": 102, "tipo": "Casal", "disponivel": False}

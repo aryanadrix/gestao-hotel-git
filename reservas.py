@@ -1,3 +1,6 @@
+#Colaboração: Lucas Almeida
+
+
 reservas = [
     {"cliente": "Adriano", "quarto": 101}
 ]
