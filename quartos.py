@@ -1,11 +1,9 @@
-rooms = [
-    {"number": 101, "tipo": "Solteiro", "disponivel": True},
-    {"number": 102, "tipo": "Casal", "disponivel": False}
+quartos = [
+    {"numero": 101, "tipo": "Solteiro", "disponivel": True},
+    {"numero": 102, "tipo": "Casal", "disponivel": False}
 ]
 
 def listar_quartos():
-    print("\n=== Lista de Quartos ===")
-    for q in rooms:
+    for q in quartos:
         estado = "Disponível" if q["disponivel"] else "Ocupado"
-        print(f"Quarto {q['number']} - {q['tipo']} ({estado})")
-
+        print(f"Quarto {q['numero']} - {q['tipo']} ({estado})")
