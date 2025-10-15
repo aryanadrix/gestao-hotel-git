@@ -1,3 +1,6 @@
+#Colaboração: Tito Adriano
+
+
 clientes = [
     {"nome": "Adriano", "telefone": "912345678"},
     {"nome": "Lucas", "telefone": "923456789"}
