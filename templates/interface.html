@@ -5,10 +5,42 @@
     <title>Gestão de Reservas de Hotel</title>
 </head>
 <body style="font-family: Arial, sans-serif; background-color: #f3f3f3; text-align: center; margin-top: 50px;">
-    <div style="background: white; width: 400px; margin: auto; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px #ccc;">
+    <div style="background: white; width: 450px; margin: auto; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px #ccc;">
         <h2 style="color: #fb6e2b;">Sistema de Gestão de Reservas</h2>
-        <p>Bem-vindo ao sistema simples de reservas de hotel.</p>
-        <a href="#" style="background-color: #fb6e2b; color: white; text-decoration: none; padding: 10px 15px; border-radius: 5px;">Entrar</a>
+        <p style="margin-bottom: 25px;">Visualização simples de dados do hotel.</p>
+
+        <h3 style="color: #333;">Clientes</h3>
+        {% if clientes %}
+            <ul style="list-style: none; padding: 0;">
+                {% for c in clientes %}
+                    <li>{{ c.nome }} — {{ c.telefone }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>Nenhum cliente registado.</p>
+        {% endif %}
+
+        <h3 style="color: #333;">Quartos</h3>
+        {% if quartos %}
+            <ul style="list-style: none; padding: 0;">
+                {% for q in quartos %}
+                    <li>Quarto {{ q.numero }} - {{ q.tipo }} ({{ "Disponível" if q.disponivel else "Ocupado" }})</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>Nenhum quarto registado.</p>
+        {% endif %}
+
+        <h3 style="color: #333;">Reservas</h3>
+        {% if reservas %}
+            <ul style="list-style: none; padding: 0;">
+                {% for r in reservas %}
+                    <li>{{ r.cliente }} → Quarto {{ r.quarto }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>Nenhuma reserva feita.</p>
+        {% endif %}
     </div>
 </body>
 </html>
