@@ -1,12 +1,13 @@
-from clientes import listar_clientes
-from quartos import listar_quartos
-from reservas import listar_reservas
+from flask import Flask, render_template
+from clientes import clientes
+from quartos import quartos
+from reservas import reservas
 
-def main():
-    print("=== Sistema de Gestão de Reservas de Hotel ===")
-    listar_clientes()
-    listar_quartos()
-    listar_reservas()
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return render_template('interface.html', clientes=clientes, quartos=quartos, reservas=reservas)
 
 if __name__ == "__main__":
-    main()
+    app.run(debug=True)
